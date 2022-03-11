@@ -295,8 +295,9 @@ input[type=number] {
     margin: 3px 3px 0px 3px;
 }
 
-.flag-text, .help-sign {
+.flag-text, .help-sign, .sai-face, .sai-smile {
     user-select: none; /* supported by Chrome and Opera */
+    /* user-drag: none; */
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
    -moz-user-select: none; /* Firefox */
