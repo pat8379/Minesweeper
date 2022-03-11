@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="apple-touch-icon" sizes="180x180" href="./resources/favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./resources/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./resources/favicon/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <script src="main.js" defer></script>
+    <script src="https://kit.fontawesome.com/bce6b21c52.js" crossorigin="anonymous"></script>
+    <title>Minesweeper</title>
+</head>
+<body>
+    <header>
+        <h1>Minesweeper</h1>
+        <h4>Press any tile to start or Change the number of mines</h4>
+        <div class="input-boxes">
+            <input type="number" id="am-mines" name="am-mines" value="12" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" maxlength="2">
+        </div>
+        <span class="ebol">12 Mines</span>
+        <button class="startt">
+            <img src="./resources/the_sairam_tongue_1-removebg-preview.png" alt="" class="sai-smile" draggable="false">
+            <img src="./resources/sai_smile.png" alt="" class="sai-face" draggable="false">
+        </button>
+        <span class="ebol2">Press Otillingam to Restart</span>
+        <div class="flag-help-container">
+            <div class="flag-container" draggable="false">
+                <p class="flag-text">12</p>
+                <i class="fa fa-solid fa-flag fa-lg" id="flag-marker" draggable="false"></i>
+            </div>
+            <div class="help-container">
+                <span class="help-sign">?</span>
+            </div>
+            <div class="pop-up1">
+                <p>Use the Flag button to mark suspicious blocks.</p>
+                <p>Click the Flag button again to disable it.</p>
+                <br>
+                <p>* You can use as much Flags as you want</p>
+            </div>
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div class="sec-container">
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+                <div class="box">
+                    <i class="fa fa-solid"></i>
+                    <p class="bomb-around"></p>
+                    <i class="fa fa-solid"></i>
+                </div>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <h3>How to play</h3>
+        <div class="manual">
+            <img src="./resources/explaination.jpg" alt="how to play" class="explanation">
+            <div class="explain-text">
+                <p>Hidden mines are randomly placed inside the blocks.
+                </p>
+                <p>
+                    The number in each block represents the amount of mines around it.
+                </p>
+                <p>
+                    When every block without a hidden mine has been revealed/clicked, you win the game.
+                    
+                </p>
+                <p>
+                    You lose if you click one of the blocks with a hidden mine.
+                </p>
+            </div>
+        </div>
+        <p class="source-code">Source Code on <a href="#">Github</a></p>
+    </footer>
+</body>
+</html>
