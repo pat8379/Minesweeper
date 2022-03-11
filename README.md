@@ -1,2 +1,2 @@
 # Minesweeper
-Simple minesweeper game 
+Just trying out the DOM, simple minesweeper game 
