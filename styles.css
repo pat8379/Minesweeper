@@ -214,7 +214,7 @@ input[type=number] {
     animation: rotating 3s linear 0s infinite forwards;
     overflow: hidden;
     position: relative;
-    cursor: pointer;
+    /* cursor: pointer; */
 }
 
 .startt:active{
