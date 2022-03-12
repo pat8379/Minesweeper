@@ -123,6 +123,10 @@
     font-family: 'Fira Sans', sans-serif;
 }
 
+*::selection {
+    background-color: transparent;
+}
+
 body {
     width: 100%;
     background: linear-gradient(45deg, rgba(242,193,174,1) 20%, rgba(237,136,97,1) 58%);
@@ -227,6 +231,7 @@ input[type=number] {
 
 .sai-face {
     position: absolute;
+    background-color: transparent;
     max-width: 60px;
     top: 6px;
     left: 6px;
@@ -234,6 +239,7 @@ input[type=number] {
 
 .sai-smile {
     position: absolute;
+    background-color: transparent;
     max-width: 60px;
     top: -12px;
     left: 6px;
@@ -295,13 +301,23 @@ input[type=number] {
     margin: 3px 3px 0px 3px;
 }
 
-.flag-text, .help-sign, .sai-face, .sai-smile {
+.flag-text, .help-sign, .sai-face, .sai-smile, img {
     user-select: none; /* supported by Chrome and Opera */
     /* user-drag: none; */
+   -webkit-touch-callout: none;
+   -webkit-tap-highlight-color: transparent;
    -webkit-user-select: none; /* Safari */
    -khtml-user-select: none; /* Konqueror HTML */
    -moz-user-select: none; /* Firefox */
    -ms-user-select: none; /* Internet Explorer/Edge */
+}
+
+.sai-face:focus {
+    outline: none !important;
+}
+
+.sai-smile:focus {
+    outline: none !important;
 }
 
 #flag-marker {
